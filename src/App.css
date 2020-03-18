@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- My CSS --- */
+
+.App,
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  background-image: linear-gradient(-315deg, #9cd89f 40%,#41b6d7 100%);
+  padding: 32px 0;
+  letter-spacing: 2px
+}
+
+.employee-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee {
+  background: #e2f6fc;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: left;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+input, textarea {
+  width: 200px;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;  
+  border-radius: 4px;
+}
+
+button {
+  background: #e0c111;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #191919;
+  border-radius: 4px;
+}
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.12), 0 2px 3px 2px rgba(0, 0, 0, 0.24);
+  background: #e0c111;
+}
+button:active {
+  background: #e0c111;
+          box-shadow: inset 0px 0px 5px #e0c111;
+   outline: none;
+}

@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import EmployeeForm from "./components/EmployeeForm";
+// import ReactDOM from "react-dom";
+import Employees from "./components/Employees";
 
 function App() {
+
+  const [employeeState, setEmployeeState] = useState(
+    [{
+      id: 1,
+      name: "John Doe",
+      email: "john.doe@gmail.com",
+      role: "Web Developer"
+    }, 
+    {
+      id: 2,
+      name: "Adam Doe",
+      email: "adam.doe@gmail.com",
+      role: "Engineer"
+    }
+    ]);
+
+  const addEmployee = newEmployee => {
+    setEmployeeState([...employeeState, newEmployee])
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> Employee List </h1>
+      <EmployeeForm addEmployee={ addEmployee } />
+      <Employees employees={ employeeState } />
     </div>
   );
 }
